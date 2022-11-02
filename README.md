@@ -1,1 +1,2 @@
 # MarketPlaceDjango
+# Test mode
