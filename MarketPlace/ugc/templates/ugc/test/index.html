@@ -1,0 +1,24 @@
+{% extends 'ugc/test/base.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+    <center><h1>Главная страница</h1></center>
+
+    {% if tasks %}
+        {% for el  in tasks %}
+            <div class="alert alert-warning mt-2">
+                <h3>{{ el.title }}</h3>
+                 <p>{{ el.task }}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>В данный момент у нас нет записей :(</p>
+    {% endif %}
+
+{% endblock %}
+
+
+
