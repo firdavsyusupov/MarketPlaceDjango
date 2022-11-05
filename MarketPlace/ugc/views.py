@@ -8,4 +8,34 @@ def index(request):
 
 
 def about(request):
-    return render(request, 'ugc/test/about.html')
+    return render(request, 'ugc/about.html')
+
+
+def shop(request):
+    return render(request, 'ugc/shop.html')
+
+
+def shop_details(request):
+    return render(request, 'ugc/shop-details.html')
+
+
+def shopping_cart(request):
+    return render(request, 'ugc/shopping-cart.html')
+
+
+def checkout(request):
+    return render(request, 'ugc/checkout.html')
+
+
+def blog(request):
+    return render(request, 'ugc/blog.html')
+
+
+def blog_details(request):
+    return render(request, 'ugc/blog-details.html')
+
+
+def contact(request):
+    return render(request, 'ugc/contact.html')
+
+
