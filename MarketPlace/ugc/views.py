@@ -39,3 +39,7 @@ def contact(request):
     return render(request, 'ugc/contact.html')
 
 
+def signin(request):
+    return render(request, 'ugc/signin.html')
+
+
