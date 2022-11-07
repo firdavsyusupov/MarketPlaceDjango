@@ -43,3 +43,6 @@ def signin(request):
     return render(request, 'ugc/signin.html')
 
 
+def signup(request):
+    return render(request, 'ugc/signup.html')
+
