@@ -3,4 +3,4 @@ from .models import *
 
 
 class AddMailingForm(forms.Form):
-    email = forms.CharField(max_length=255)
+    email = forms.EmailField(max_length=255)

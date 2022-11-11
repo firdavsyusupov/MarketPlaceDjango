@@ -78,7 +78,14 @@ class LatestBlog(models.Model):
 
 
 class EmailForMailing(models.Model):
-    email = models.EmailField()
+    email = models.EmailField(max_length=254)
+
+    def __str__(self):
+        return self.email
+
+    class Meta:
+        verbose_name = 'User'
+        verbose_name_plural = 'Рассылки'
 
 
 class Mailing(models.Model):
