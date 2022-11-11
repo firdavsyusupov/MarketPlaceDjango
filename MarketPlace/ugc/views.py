@@ -1,10 +1,19 @@
 from django.shortcuts import render
-from .models import Task
+from django.http import HttpResponse
+from .models import *
 # Create your views here.
 
 
 def index(request):
-    return render(request, 'ugc/index.html')
+    hero_posts = HeroSection.objects.all()
+    banner_posts = BannerSection.objects.all()
+    blog_posts = LatestBlog.objects.order_by('-date')[:3]
+    context = {
+        'hero': hero_posts,
+        'banner': banner_posts,
+        'blog': blog_posts
+    }
+    return render(request, 'ugc/index.html', context)
 
 
 def about(request):
@@ -28,11 +37,28 @@ def checkout(request):
 
 
 def blog(request):
-    return render(request, 'ugc/blog.html')
+    blog_posts = LatestBlog.objects.order_by('-date')
+    context = {
+        'blog': blog_posts
+    }
+    return render(request, 'ugc/blog.html', context)
 
 
 def blog_details(request):
-    return render(request, 'ugc/blog-details.html')
+    blog_posts = LatestBlog.objects.all()
+    context = {
+        'blog': blog_posts
+    }
+    return render(request, 'ugc/blog-details.html', context)
+
+
+def post(request, pk):
+    blog_post = LatestBlog.objects.get(id=pk)
+    print(blog_post)
+    context = {
+        'blog_post': blog_post
+    }
+    return render(request, 'ugc/blog-details.html', context)
 
 
 def contact(request):

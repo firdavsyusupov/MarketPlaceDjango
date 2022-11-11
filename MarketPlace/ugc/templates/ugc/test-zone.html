@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+
+{% for blog_post in blog %}
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="blog__item">
+                            <div class="blog__item__pic set-bg" data-setbg="{{blog_post.photo}}"></div>
+                            <div class="blog__item__text">
+                                <span><img src="{% static 'ugc/img/icon/calendar.png' %}" alt=""> {{blog_post.date}}</span>
+                                <h5>{{blog_post.title}}</h5>
+
+                                <a href="{% url 'blog-post' blog_post.pk %}">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+
+</body>
+</html>
