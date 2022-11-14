@@ -24,7 +24,13 @@ class LatestBlogAdmin(admin.ModelAdmin):
     search_fields = ('id', 'title', 'date')
 
 
+class EmailForMailingAdmin(admin.ModelAdmin):
+    list_display = ('id', 'email')
+    search_fields = ('id', 'email')
+
+
 admin.site.register(Task, TaskAdmin)
 admin.site.register(HeroSection, HeroSectionAdmin)
 admin.site.register(BannerSection, BannerSectionAdmin)
 admin.site.register(LatestBlog, LatestBlogAdmin)
+admin.site.register(EmailForMailing, EmailForMailingAdmin)

@@ -84,7 +84,7 @@ class EmailForMailing(models.Model):
         return self.email
 
     class Meta:
-        verbose_name = 'User'
+        verbose_name = 'Рассылка'
         verbose_name_plural = 'Рассылки'
 
 

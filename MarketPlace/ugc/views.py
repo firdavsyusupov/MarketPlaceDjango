@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import *
 from .forms import *
@@ -13,6 +13,12 @@ def index(request):
         form = AddMailingForm(request.POST)
         if form.is_valid():
             print(form.cleaned_data)
+            try:
+                EmailForMailing.objects.create(**form.cleaned_data)
+                # form.save()
+                return redirect('home')
+            except:
+                print('Ошибка')
     else:
         form = AddMailingForm()
 
